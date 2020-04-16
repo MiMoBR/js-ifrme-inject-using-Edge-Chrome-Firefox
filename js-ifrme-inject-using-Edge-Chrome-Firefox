@@ -1,0 +1,9 @@
+url source consult --- http://jsfiddle.net/3yu6a/1
+
+   //ANTES
+  //document.getElementById('htmlPreview_'+idLead).src = "data:text/html;charset=UTF-8," + escape(data.htmlPage.split("##").join("\""));
+               
+    //DEPOIS
+    var html = escape(data.htmlPage.split("##").join("\""));
+    var uri_dec = decodeURIComponent(html);
+    document.getElementById('htmlPreview_'+idLead).contentWindow.document.write(uri_dec);
